@@ -34,13 +34,8 @@ const scrapper=async (tagName,url,urlReg=null)=>{// get tag name and return list
         list.each((element)=>{
             isLink=tagName=="a"||tagName=="link"
             let url=isLink?list[element].attribs.href:list[element].attribs.src
-            if(isLink){
-                if(isValid(urlReg,url))
-                    urlsList.push(url)
-            }
-            else{
-                urlsList.push(url)
-            }
+            urlsList.push(url)
+            
             
             
         })
